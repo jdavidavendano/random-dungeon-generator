@@ -8,6 +8,7 @@
 
 - git checkout "Nombre-rama-existente" -> me paso a otra rama 
 - git pull -> Se trae los cambios del repo remoto
+- git fetch -> Sync all the repo 
 
 
 ## Hice cambios 
