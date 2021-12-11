@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator {
 
@@ -10,6 +11,7 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator {
     [SerializeField] [Range(0.1f, 1)] private float roomPercent = 0.8f;
 
     protected override void RunProceduralGeneration() {
+        Random.InitState(seed);
         CorridorFirstGeneration();
     }
 

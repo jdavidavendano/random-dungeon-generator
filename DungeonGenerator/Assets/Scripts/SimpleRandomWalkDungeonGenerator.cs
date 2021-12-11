@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator {
 
     [SerializeField] protected SimpleRandomWalkSO randomWalkParameters;
-    [SerializeField] private int seed = 0;
+    [SerializeField] protected int seed = 0;
 
     protected override void RunProceduralGeneration() {
         HashSet<Vector2Int> floorPositions = RunRandomWalk(randomWalkParameters, startPosition);
@@ -25,7 +25,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator {
             var path = ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPosition, parameters.walkLength);
             floorPositions.UnionWith(path);
             if(parameters.startRandomlyEachIteration) {
-                Random.InitState(seed);
+                // Random.InitState(seed);
                 currentPosition = floorPositions.ElementAt(Random.Range(0, floorPositions.Count));
             }
         }
