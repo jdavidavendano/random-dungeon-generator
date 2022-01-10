@@ -4,42 +4,50 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    [SerializeField] private float m_moveSpeed = 5f;
-    [SerializeField] private Rigidbody2D m_rb;
-    [SerializeField] Animator m_animator;
-    private Vector2 m_movement;
+    [SerializeField] private float _moveSpeed = 5f;
+    private Rigidbody2D _rb;
+    private Animator _animator;
+    private Vector2 _movement;
+
+    void Start() {
+        _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponentInChildren<Animator>();
+    }
 
     void Update() {
         // Input
         // Diagonal movement
-        // m_movement.x = Input.GetAxisRaw("Horizontal");
-        // m_movement.y = Input.GetAxisRaw("Vertical");
+        _movement.x = Input.GetAxisRaw("Horizontal") * _moveSpeed * Time.deltaTime;
+        _movement.y = Input.GetAxisRaw("Vertical") * _moveSpeed * Time.deltaTime;
 
         // No diagonal movement
-        if (m_movement.y == 0) {
-            m_movement.x = Input.GetAxisRaw("Horizontal");
+        if (_movement.y == 0) {
+            _movement.x = Input.GetAxisRaw("Horizontal") * _moveSpeed * Time.deltaTime;
         }
 
-        if (m_movement.x == 0) {
-            m_movement.y = Input.GetAxisRaw("Vertical");
+        if (_movement.x == 0) {
+            _movement.y = Input.GetAxisRaw("Vertical") * _moveSpeed * Time.deltaTime;
         }
 
-        m_movement.Normalize();
+        _movement.Normalize();
 
-        if (m_movement.x < 0) {
+        if (_movement.x < 0) {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (m_movement.x > 0) {
+        else if (_movement.x > 0) {
             transform.localScale = Vector3.one;
         }
 
-        m_animator.SetFloat("Horizontal", m_movement.x);
-        m_animator.SetFloat("Vertical", m_movement.y);
-        m_animator.SetFloat("Speed", m_movement.sqrMagnitude);
+        _animator.SetFloat("Speed", _movement.sqrMagnitude);
+        // m_animator.SetFloat("Horizontal", m_movement.x);
+        // m_animator.SetFloat("Vertical", m_movement.y);
+
     }
 
+    // Como el framerate puede cambiar, se manejan las físicas aquí
+    // Ejecutado en un tiempo no encapsulado por el framerate (50 veces por segundo)
     void FixedUpdate() {
         // Movement
-        m_rb.MovePosition(m_rb.position + m_movement * m_moveSpeed * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _movement * _moveSpeed * Time.fixedDeltaTime);
     }
 }
