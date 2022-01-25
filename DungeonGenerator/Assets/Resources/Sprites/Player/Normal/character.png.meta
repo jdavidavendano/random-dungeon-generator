@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7152930139536384079
-    second: Character_Idle_1
+    second: Character_Idle_Down
   - first:
       213: -5725962078152895296
     second: Character_Walk_Down_1
@@ -16,40 +16,40 @@ TextureImporter:
     second: Character_Walk_Down_3
   - first:
       213: -8090365562718305141
-    second: Character_Walk_Right_1
+    second: Character_Idle_Right
   - first:
       213: 3445332486847661990
-    second: Character_Walk_Right_2
+    second: Character_Walk_Right_1
   - first:
       213: 7456334905099763947
-    second: Character_Walk_Right_3
+    second: Character_Walk_Right_2
   - first:
       213: 5377859178988851676
-    second: Character_Walk_Right_4
+    second: Character_Walk_Right_3
   - first:
       213: -4124168217499134943
-    second: Character_Walk_Up_1
+    second: Character_Idle_Up
   - first:
       213: 4620578802948863353
-    second: Character_Walk_Up_2
+    second: Character_Walk_Up_1
   - first:
       213: -6835189599539173722
-    second: Character_Walk_Up_3
+    second: Character_Walk_Up_2
   - first:
       213: 679739729869728943
-    second: Character_Walk_Up_4
+    second: Character_Walk_Up_3
   - first:
       213: 5248155131499935147
-    second: Character_Walk_Left_1
+    second: Character_Idle_Left
   - first:
       213: -3303779423006393323
-    second: Character_Walk_Left_4
-  - first:
-      213: -790699523677361007
     second: Character_Walk_Left_3
   - first:
+      213: -790699523677361007
+    second: Character_Walk_Left_2
+  - first:
       213: 8470420716495695676
-    second: Character_Walk_Left_4
+    second: Character_Walk_Left_3
   - first:
       213: 6167071470516247665
     second: Character_Attack_Down_1
@@ -62,6 +62,42 @@ TextureImporter:
   - first:
       213: -4888305619323244325
     second: Character_Attack_Down_4
+  - first:
+      213: 1822710792970894325
+    second: Character_Attack_Up_1
+  - first:
+      213: -4656049468798845499
+    second: Character_Attack_Up_2
+  - first:
+      213: 6237780861798913854
+    second: Character_Attack_Up_3
+  - first:
+      213: -9156188058010517731
+    second: Character_Attack_Up_4
+  - first:
+      213: -4445699719359273135
+    second: Character_Attack_Right_1
+  - first:
+      213: 1892806461834874077
+    second: Character_Attack_Right_2
+  - first:
+      213: -8627026541424588849
+    second: Character_Attack_Right_3
+  - first:
+      213: -6780520195603233165
+    second: Character_Attack_Right_4
+  - first:
+      213: -4060318028669273776
+    second: Character_Attack_Left_1
+  - first:
+      213: -6092953325292582070
+    second: Character_Attack_Left_2
+  - first:
+      213: 8340156370037202746
+    second: Character_Attack_Left_3
+  - first:
+      213: -5163677950195982287
+    second: Character_Attack_Left_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,13 +187,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_Idle_1
+      name: Character_Idle_Down
       rect:
         serializedVersion: 2
         x: 0
-        y: 230
+        y: 229
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,7 +214,7 @@ TextureImporter:
         x: 16
         y: 229
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,9 +233,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 230
+        y: 229
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,7 +256,7 @@ TextureImporter:
         x: 48
         y: 229
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,13 +271,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Right_1
+      name: Character_Idle_Right
       rect:
         serializedVersion: 2
         x: 1
-        y: 198
+        y: 197
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,13 +292,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Right_2
+      name: Character_Walk_Right_1
       rect:
         serializedVersion: 2
         x: 17
         y: 197
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,13 +313,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Right_3
+      name: Character_Walk_Right_2
       rect:
         serializedVersion: 2
         x: 33
-        y: 198
+        y: 197
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,13 +334,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Right_4
+      name: Character_Walk_Right_3
       rect:
         serializedVersion: 2
         x: 49
         y: 197
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,13 +355,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Up_1
+      name: Character_Idle_Up
       rect:
         serializedVersion: 2
         x: 0
-        y: 167
+        y: 166
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,13 +376,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Up_2
+      name: Character_Walk_Up_1
       rect:
         serializedVersion: 2
         x: 16
         y: 166
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,13 +397,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Up_3
+      name: Character_Walk_Up_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 167
+        y: 166
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,13 +418,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Up_4
+      name: Character_Walk_Up_3
       rect:
         serializedVersion: 2
         x: 48
         y: 166
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,13 +439,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Left_1
+      name: Character_Idle_Left
       rect:
         serializedVersion: 2
         x: 0
-        y: 134
+        y: 133
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,13 +460,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Left_2
+      name: Character_Walk_Left_1
       rect:
         serializedVersion: 2
         x: 16
         y: 133
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,13 +481,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Left_3
+      name: Character_Walk_Left_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 134
+        y: 133
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,13 +502,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Walk_Left_4
+      name: Character_Walk_Left_3
       rect:
         serializedVersion: 2
         x: 48
         y: 133
         width: 16
-        height: 20
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,6 +602,258 @@ TextureImporter:
       bones: []
       spriteID: bd031b640ff392cb0800000000000000
       internalID: -4888305619323244325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Up_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 67
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbfc4f1fc19b4910800000000000000
+      internalID: 1822710792970894325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Up_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 67
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd399b4da3626fb0800000000000000
+      internalID: -4656049468798845499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Up_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 67
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37114605ac019650800000000000000
+      internalID: 6237780861798913854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Up_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 67
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ffb99097faee080800000000000000
+      internalID: -9156188058010517731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Right_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 34
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1576989d8a3bd42c0800000000000000
+      internalID: -4445699719359273135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Right_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 34
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc4b32d279944a10800000000000000
+      internalID: 1892806461834874077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Right_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 34
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7458a8115a64880800000000000000
+      internalID: -8627026541424588849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Right_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 34
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37605bc8ec0c6e1a0800000000000000
+      internalID: -6780520195603233165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Left_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059bd02f34ad6a7c0800000000000000
+      internalID: -4060318028669273776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Left_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b86e48b3b717ba0800000000000000
+      internalID: -6092953325292582070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Left_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 2
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f574fc7003eb370800000000000000
+      internalID: 8340156370037202746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Attack_Left_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 2
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1302d0c334ee658b0800000000000000
+      internalID: -5163677950195982287
       vertices: []
       indices: 
       edges: []

@@ -31,17 +31,13 @@ public class PlayerMovement : MonoBehaviour {
 
         _movement.Normalize();
 
-        if (_movement.x < 0) {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else if (_movement.x > 0) {
-            transform.localScale = Vector3.one;
-        }
+        _animator.SetFloat("Horizontal", _movement.x);
+        _animator.SetFloat("Vertical", _movement.y);
+        _animator.SetFloat("Speed", _movement.sqrMagnitude); // Raíz cuadrada de la magnitud del vector de movimiento
 
-        _animator.SetFloat("Speed", _movement.sqrMagnitude);
-        // m_animator.SetFloat("Horizontal", m_movement.x);
-        // m_animator.SetFloat("Vertical", m_movement.y);
-
+        if (Input.GetMouseButtonDown(0)) {
+            StartCoroutine(AttackCo());
+        }
     }
 
     // Como el framerate puede cambiar, se manejan las físicas aquí
@@ -49,5 +45,15 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate() {
         // Movement
         _rb.MovePosition(_rb.position + _movement * _moveSpeed * Time.fixedDeltaTime);
+    }
+
+    private IEnumerator AttackCo() {
+        _animator.SetBool("Attacking", true);
+        // yield return null;
+        yield return new WaitForSeconds(0.05f);
+        Debug.Log("a");
+        _animator.SetBool("Attacking", false);
+        yield return new WaitForSeconds(0.05f);
+        Debug.Log("b");
     }
 }
