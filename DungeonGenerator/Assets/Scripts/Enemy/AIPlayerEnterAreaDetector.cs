@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class AIPlayerEnterAreaDetector : MoveController
     [field: SerializeField]
 
     public bool PlayerInArea { get; private set; }
+
     public bool AttackingPlayer { get; private set; }
 
     public Transform Player { get; private set; }
@@ -16,8 +16,9 @@ public class AIPlayerEnterAreaDetector : MoveController
 
     [SerializeField]
     private string detectionTag = "Player";
+
     [SerializeField]
-    private float idleVelocity = 0.2f;
+    private float idleVelocity = 0.3f;
 
     [SerializeField]
     private float attackDistance = 0.9f;
@@ -30,6 +31,7 @@ public class AIPlayerEnterAreaDetector : MoveController
 
     private void Awake()
     {
+        // Enemy collider for not trespassing walls
         m_Collider2D = GetComponent<BoxCollider2D>();
     }
 
@@ -44,21 +46,20 @@ public class AIPlayerEnterAreaDetector : MoveController
         new Vector2(-1f, -1f)
     };
 
+    // Player in range of the enemy 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(detectionTag))
         {
-            Debug.Log("Entró");
             PlayerInArea = true;
             Player = collision.gameObject.transform;
         }
     }
-
+    // Player out of range of the enemy 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag(detectionTag))
         {
-            Debug.Log("Salió");
             PlayerInArea = false;
             Player = null;
         }
@@ -73,12 +74,14 @@ public class AIPlayerEnterAreaDetector : MoveController
         }
         return newDirection;
     }
+
     private void FixedUpdate()
     {
         if (PlayerInArea)
         {
             UpdateMotor(new Vector2(Player.position.x - transform.position.x, Player.position.y - transform.position.y).normalized * catchVelocity * Time.deltaTime);
-            //transform.position = Vector2.MoveTowards(transform.position, Player.position, catchVelocity * Time.deltaTime);
+
+            // Enemy attacking or not
             if (Vector2.Distance(transform.position, Player.position) < attackDistance && !AttackingPlayer)
             {
                 m_Collider2D.size = new Vector2(0, 0);
@@ -100,6 +103,7 @@ public class AIPlayerEnterAreaDetector : MoveController
             // Idle
 
             UpdateMotor(new Vector2(directions[lastDirection].x * idleVelocity, directions[lastDirection].y * idleVelocity));
+
             if (lastDirection < 4)
             {
                 if (lastPosition == transform.position)
@@ -112,14 +116,9 @@ public class AIPlayerEnterAreaDetector : MoveController
 
                 lastDirection = getRandomDirection();
             }
-
-            //transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, 1), enemyVelocity * Time.deltaTime);
-
-
         }
+
         lastPosition = transform.position;
-
-
     }
 
 }
