@@ -19,7 +19,7 @@ TextureImporter:
     second: Log_Idle_1
   - first:
       213: -22439546833456996
-    second: log_5
+    second: Log_Wake_Up_1
   - first:
       213: -451413936476517383
     second: Log_Walk_Up_1
@@ -37,7 +37,7 @@ TextureImporter:
     second: Log_Idle_2
   - first:
       213: -2570500000468905864
-    second: log_11
+    second: Log_Wake_Up_2
   - first:
       213: 8498479158080882289
     second: Log_Walk_Right_1
@@ -55,7 +55,7 @@ TextureImporter:
     second: Log_Idle_3
   - first:
       213: -822619953307990688
-    second: log_17
+    second: Log_Wake_Up_3
   - first:
       213: -128083769461270964
     second: Log_Walk_Left_1
@@ -265,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_5
+      name: Log_Wake_Up_1
       rect:
         serializedVersion: 2
         x: 160
@@ -391,7 +391,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_11
+      name: Log_Wake_Up_2
       rect:
         serializedVersion: 2
         x: 160
@@ -517,7 +517,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_17
+      name: Log_Wake_Up_3
       rect:
         serializedVersion: 2
         x: 160

@@ -1,0 +1,3 @@
+En Knockback:
+
+Hacer que si el collider es CircleCollider2D no interactúe.
