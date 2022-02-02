@@ -30,15 +30,22 @@ public class AIPlayerEnterAreaDetector : MoveController
     BoxCollider2D m_Collider2D;
 
     private float timeSleeping = 0f;
+    
+    private float timeAwakeMandatory = 10f;
+
 
     private float goToBed()
     {
-        int isSleepingRandom = Random.Range(0, 9);
-
-        if (isSleepingRandom < 1)
+        if (timeAwakeMandatory < 0)
         {
-            return Random.Range(10, 30);
+            int isSleepingRandom = Random.Range(0, 9);
+
+            if (isSleepingRandom < 1)
+            {
+                return Random.Range(10, 30);
+            }
         }
+
         return 0;
     }
 
@@ -106,8 +113,6 @@ public class AIPlayerEnterAreaDetector : MoveController
                 AttackingPlayer = false;
                 Debug.Log("Ya no");
                 m_Collider2D.size = new Vector2(0.5f, 0.8f);
-
-
             }
 
         }
@@ -116,12 +121,10 @@ public class AIPlayerEnterAreaDetector : MoveController
             // Idle
             if (timeSleeping > 0)
             {
-                Debug.Log("sleeping for " + timeSleeping);
                 timeSleeping -= Time.deltaTime;
             }
             else
             {
-
                 UpdateMotor(new Vector2(directions[lastDirection].x * idleVelocity, directions[lastDirection].y * idleVelocity));
 
                 if (lastDirection < 4)
@@ -140,6 +143,15 @@ public class AIPlayerEnterAreaDetector : MoveController
                 }
             }
 
+        }
+
+        if (timeAwakeMandatory > 0)
+        {
+            timeAwakeMandatory -= Time.deltaTime;
+        }
+        if (timeSleeping < 0)
+        {
+            timeAwakeMandatory = 10f;
         }
 
         lastPosition = transform.position;
