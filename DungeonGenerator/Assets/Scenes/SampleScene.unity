@@ -11060,7 +11060,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 830128114760711816, guid: b040f93d75deab5468f62dd90f198655, type: 3}
-  enemyNumber: 25
+  enemyNumber: 20
+  minDistanceSpawnEnemiesFromPlayer: 8
 --- !u!4 &1185080872
 Transform:
   m_ObjectHideFlags: 0
