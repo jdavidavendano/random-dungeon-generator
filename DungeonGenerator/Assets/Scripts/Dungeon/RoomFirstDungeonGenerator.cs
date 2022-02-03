@@ -5,15 +5,27 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator {
-    [SerializeField] private int minRoomWidth = 4, minRoomHeight = 4;
-    [SerializeField] private int dungeonWidth = 20, dungeonHeight = 20;
+    [SerializeField] private int minRoomWidth = 10, minRoomHeight = 10;
+    [SerializeField] private int dungeonWidth = 70, dungeonHeight = 70;
     [SerializeField] [Range(0, 10)] private int offset = 1;
     [SerializeField] private bool randomWalkRooms = false;
     private GameObject _player;
 
-    protected override void RunProceduralGeneration() {
-        Random.InitState(seed);
+    public override void RunProceduralGeneration() {
+        // Se busca al objeto player para teletransportarlo mas tarde al general el dungeon
         _player = GameObject.Find("PlayerNormal");
+
+        // Se cargan los datos de la dungeon y las salas
+        minRoomWidth = MenuScript._RoomSize;
+        minRoomHeight= MenuScript._RoomSize;
+        dungeonWidth = MenuScript._DungeonSize;
+        dungeonHeight = MenuScript._DungeonSize;
+        seed = MenuScript._Seed;
+
+        // Se establece la seed
+        Random.InitState(seed);
+
+        // Creacion del dungeon
         CreateRooms();
     }
 
