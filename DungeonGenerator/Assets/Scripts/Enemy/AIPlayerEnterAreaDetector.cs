@@ -104,7 +104,7 @@ public class AIPlayerEnterAreaDetector : MoveController
             // Enemy attacking or not
             if (Vector2.Distance(transform.position, Player.position) < attackDistance && !AttackingPlayer)
             {
-                m_Collider2D.size = new Vector2(0, 0);
+                // m_Collider2D.size = new Vector2(0, 0);
                 AttackingPlayer = true;
                 Debug.Log("Ataca");
             }

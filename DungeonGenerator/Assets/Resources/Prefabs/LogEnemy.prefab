@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 237591313664144081}
   - component: {fileID: 4477270023451854804}
   - component: {fileID: 830128114760711817}
-  - component: {fileID: 7247818994288125493}
+  - component: {fileID: 1840843079368528158}
   m_Layer: 0
   m_Name: LogEnemy
   m_TagString: Enemy
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7247818994288125493
+--- !u!114 &1840843079368528158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PlayerInArea>k__BackingField: 0
-  catchVelocity: 20
+  catchVelocity: 15
   detectionTag: Player
   idleVelocity: 0.3
   attackDistance: 0.9

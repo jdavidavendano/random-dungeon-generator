@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Diferenciaremos los estados en los que puede estar el jugador
 enum PlayerState {
     walk,
     attack
@@ -13,38 +14,46 @@ public class PlayerMovement : MonoBehaviour {
     private PlayerState _currentState;
     private Rigidbody2D _rigidBody;
     private Animator _animator;
-    private Vector3 _movement;
+    private Vector2 _movement;
+    private bool _isAttacking;
 
     void Start() {
         _currentState = PlayerState.walk;
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
-    }
 
+        // Para que al empezar el juego se inicialicen valores de acuerdo a la dirección del jugador
+        // y no se activen los cuatro colliders al atacar sin haberse movido.
+        _animator.SetFloat("Horizontal", 0);
+        _animator.SetFloat("Vertical", -1);
+
+        _isAttacking = false;
+    }
+    
     void Update() {
-        // Input
+        // Input del movimiento
+        _movement = Vector3.zero;
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
+
+        // Input del ataque
         if (Input.GetMouseButtonDown(0) && _currentState != PlayerState.attack) {
-            Debug.Log("click");
+            _isAttacking = true;
             StartCoroutine(AttackCo());
-        }
-        else if (_currentState == PlayerState.walk) {
-            UpdateAnimationAndMove();
         }
     }
 
     // Como el framerate puede cambiar, se manejan las físicas aquí
     // Ejecutado en un tiempo no encapsulado por el framerate (50 veces por segundo)
     void FixedUpdate() {
-        // Input del movimiento
-        _movement = Vector3.zero;
-        _movement.x = Input.GetAxisRaw("Horizontal") * _moveSpeed * Time.fixedDeltaTime;
-        _movement.y = Input.GetAxisRaw("Vertical") * _moveSpeed * Time.fixedDeltaTime;
-        _movement.Normalize();
+        if (_currentState == PlayerState.walk && _isAttacking == false) {
+            UpdateAnimationAndMove();
+        }
     }
 
     void UpdateAnimationAndMove() {
         // Movimiento
-        if (_movement != Vector3.zero) {
+        if (_movement != Vector2.zero) {
             MoveCharacter();
 
             _animator.SetFloat("Horizontal", _movement.x);
@@ -57,7 +66,8 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void MoveCharacter() {
-        _rigidBody.MovePosition(transform.position + _movement * _moveSpeed * Time.deltaTime);
+        _movement.Normalize();
+        _rigidBody.MovePosition(_rigidBody.position + _movement * _moveSpeed * Time.fixedDeltaTime);
     }
 
     private IEnumerator AttackCo() {
@@ -70,5 +80,6 @@ public class PlayerMovement : MonoBehaviour {
 
         yield return new WaitForSeconds(0.3f); // Esperar mientras termina la animación
         _currentState = PlayerState.walk;
+        _isAttacking = false;
     }
 }
