@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour {
     private Vector2 _movement;
     private Animator _animator;
     private bool _isAttacking;
+    public FloatValue _currentHealth;
+    public Signal _playerHealthSignal;
 
     void Start() {
         _currentState = PlayerState.walk;
@@ -74,8 +76,16 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     // Empujar
-    public void Knock(float knockbackTime) {
-        StartCoroutine(KnockCo(knockbackTime));
+    public void Knock(float knockbackTime, float damage) {
+        _currentHealth._runTimeValue -= damage; // Hacer daño
+        _playerHealthSignal.Raise();
+        // Solo se ejecuta si el jugador no ha muerto
+        if(_currentHealth._runTimeValue > 0) {
+            StartCoroutine(KnockCo(knockbackTime));
+        }
+        else {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator AttackCo() {

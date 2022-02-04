@@ -6,6 +6,7 @@ public class Knockback : MonoBehaviour {
 
     [SerializeField] private float _thrust;
     [SerializeField] private float _knockbackTime;
+    [SerializeField] private float _damage;
 
     void OnTriggerEnter2D(Collider2D other) {
         // Objetos que se pueden romper
@@ -24,14 +25,16 @@ public class Knockback : MonoBehaviour {
                 hit.AddForce(difference, ForceMode2D.Impulse);
 
                 // Ejecución para jugador golpeando a enemigo
-                if(other.gameObject.CompareTag("Enemy")) {
+                if(other.gameObject.CompareTag("Enemy") && other.isTrigger) {
                     hit.GetComponent<Enemy>()._currentState = EnemyState.stagger;
-                    other.GetComponent<Enemy>().Knock(hit, _knockbackTime);
+                    other.GetComponent<Enemy>().Knock(hit, _knockbackTime, _damage);
                 }
                 // Ejecución para enemigo golpeando a jugador
                 if(other.gameObject.CompareTag("Player")) {
-                    hit.GetComponent<PlayerMovement>()._currentState = PlayerState.stagger;
-                    other.GetComponent<PlayerMovement>().Knock(_knockbackTime);
+                    if(other.GetComponent<PlayerMovement>()._currentState != PlayerState.stagger) {
+                        hit.GetComponent<PlayerMovement>()._currentState = PlayerState.stagger;
+                        other.GetComponent<PlayerMovement>().Knock(_knockbackTime, _damage);
+                    }
                 }
             }
         }

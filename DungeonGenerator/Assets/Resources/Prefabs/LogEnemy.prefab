@@ -197,10 +197,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743b89c352df97c489ba14a2e051062b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 2
+  _currentState: 0
+  _maxHealth: {fileID: 11400000, guid: 68890a4291350314f814bda6d2b74603, type: 2}
   _baseAttack: 1
   _moveSpeed: 1
-  _currentState: 0
   _chaseRadius: 2
   _attackRadius: 0.46
 --- !u!61 &1347931679433666463
@@ -243,3 +243,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _thrust: 3
   _knockbackTime: 0.2
+  _damage: 1

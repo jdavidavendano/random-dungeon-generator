@@ -11,15 +11,28 @@ public enum EnemyState {
 
 public class Enemy : MonoBehaviour {
 
-    [SerializeField] protected int _health;
+    public EnemyState _currentState;
+    [SerializeField] protected FloatValue _maxHealth;
+    protected float _health;
     protected string _enemyName;
     [SerializeField] protected int _baseAttack;
     [SerializeField] protected float _moveSpeed;
-    public EnemyState _currentState;
+
+    void Awake() {
+        _health = _maxHealth._initialValue;
+    }
+
+    void TakeDamage(float damage) {
+        _health -= damage;
+        if(_health <= 0) {
+            this.gameObject.SetActive(false);
+        }
+    }
 
     // Empujar
-    public void Knock(Rigidbody2D myRigidBody, float knockbackTime) {
+    public void Knock(Rigidbody2D myRigidBody, float knockbackTime, float damage) {
         StartCoroutine(KnockCo(myRigidBody, knockbackTime));
+        TakeDamage(damage);
     }
 
     // Ejecutar el empuje
