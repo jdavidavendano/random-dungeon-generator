@@ -17,11 +17,17 @@ public class Enemy : MonoBehaviour {
     [SerializeField] protected float _moveSpeed;
     public EnemyState _currentState;
 
-    void Start() {
-        
+    // Empujar
+    public void Knock(Rigidbody2D myRigidBody, float knockbackTime) {
+        StartCoroutine(KnockCo(myRigidBody, knockbackTime));
     }
 
-    void Update() {
-        
+    // Ejecutar el empuje
+    IEnumerator KnockCo(Rigidbody2D myRigidBody, float knockbackTime) {
+        if(myRigidBody != null) {
+            yield return new WaitForSeconds(knockbackTime);
+            _currentState = EnemyState.idle;
+            myRigidBody.velocity = Vector2.zero;
+        }
     }
 }

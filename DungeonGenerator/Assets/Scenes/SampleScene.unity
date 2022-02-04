@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 558685916}
   m_Layer: 0
   m_Name: UpHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,13 +396,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.15351486, y: -0.16467333}
+    - - {x: 0.15351486, y: -0.1564045}
       - {x: 0.121949136, y: 0.21492413}
-      - {x: -0.16604233, y: 0.23334074}
-      - {x: -0.20877594, y: 0.51426184}
-      - {x: -0.051382422, y: 0.66635776}
-      - {x: 0.49824905, y: 0.4149022}
-      - {x: 0.5411825, y: -0.20260674}
+      - {x: -0.105407715, y: 0.25263453}
+      - {x: -0.12884659, y: 0.59419215}
+      - {x: -0.045870185, y: 0.62501407}
+      - {x: 0.46517563, y: 0.4149022}
+      - {x: 0.50535107, y: -0.16126305}
 --- !u!114 &558685916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,9 +412,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 558685913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f09d6e328749149afbffc0d8106695, type: 3}
+  m_Script: {fileID: 11500000, guid: efc7706cb67e7be479e296c7bac5b86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _thrust: 4
+  _knockbackTime: 0.2
 --- !u!1 &571583779
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +496,7 @@ GameObject:
   - component: {fileID: 658064493}
   m_Layer: 0
   m_Name: DownHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,11 +541,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.17433548, y: -0.04086113}
-      - {x: -0.5509024, y: -0.061195105}
-      - {x: -0.28532165, y: -0.5418924}
-      - {x: 0.15696871, y: -0.67194295}
-      - {x: 0.22911453, y: -0.60799026}
-      - {x: 0.22783947, y: -0.14082533}
+      - {x: -0.5150748, y: -0.063951224}
+      - {x: -0.26878494, y: -0.52811134}
+      - {x: 0.14594424, y: -0.660918}
+      - {x: 0.21257782, y: -0.60799026}
+      - {x: 0.22232723, y: -0.14358193}
 --- !u!114 &658064493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,9 +555,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 658064490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f09d6e328749149afbffc0d8106695, type: 3}
+  m_Script: {fileID: 11500000, guid: efc7706cb67e7be479e296c7bac5b86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _thrust: 4
+  _knockbackTime: 0.2
 --- !u!1 &664316878
 GameObject:
   m_ObjectHideFlags: 0
@@ -11220,7 +11224,7 @@ GameObject:
   - component: {fileID: 1095997161}
   m_Layer: 0
   m_Name: RightHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11265,11 +11269,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.2035904, y: -0.06648874}
-      - {x: 0.15698242, y: 0.17819452}
-      - {x: 0.43133253, y: 0.39148548}
-      - {x: 0.66359955, y: -0.115911365}
-      - {x: 0.39901507, y: -0.5588486}
-      - {x: 0.06671524, y: -0.27100706}
+      - {x: 0.17903519, y: 0.1533885}
+      - {x: 0.43133253, y: 0.36392286}
+      - {x: 0.6305261, y: -0.113155246}
+      - {x: 0.37696612, y: -0.49821162}
+      - {x: 0.08876419, y: -0.2572255}
 --- !u!114 &1095997161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11279,9 +11283,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095997158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f09d6e328749149afbffc0d8106695, type: 3}
+  m_Script: {fileID: 11500000, guid: efc7706cb67e7be479e296c7bac5b86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _thrust: 4
+  _knockbackTime: 0.2
 --- !u!1 &1185080870
 GameObject:
   m_ObjectHideFlags: 0
@@ -23848,7 +23854,7 @@ GameObject:
   - component: {fileID: 1494337889}
   m_Layer: 0
   m_Name: LeftHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23893,11 +23899,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.19382858, y: -0.09032583}
-      - {x: -0.23972231, y: 0.16574171}
-      - {x: -0.48909897, y: 0.33525908}
-      - {x: -0.6885017, y: -0.11833644}
-      - {x: -0.33740234, y: -0.5646639}
-      - {x: -0.0053987503, y: -0.32943493}
+      - {x: -0.2094031, y: 0.066517144}
+      - {x: -0.48358673, y: 0.33250296}
+      - {x: -0.6609405, y: -0.112823725}
+      - {x: -0.32361984, y: -0.5233207}
+      - {x: -0.041226387, y: -0.29911667}
 --- !u!114 &1494337889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23907,9 +23913,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1494337886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f09d6e328749149afbffc0d8106695, type: 3}
+  m_Script: {fileID: 11500000, guid: efc7706cb67e7be479e296c7bac5b86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _thrust: 4
+  _knockbackTime: 0.2
 --- !u!1 &1700659242
 GameObject:
   m_ObjectHideFlags: 0
@@ -23930,20 +23938,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1700659243
-MonoBehaviour:
+--- !u!61 &1700659243
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700659242}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc7706cb67e7be479e296c7bac5b86d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _thrust: 4
-  _knockbackTime: 0.2
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0018348694, y: -0.011142015}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.50536346, y: 0.6192937}
+  m_EdgeRadius: 0
 --- !u!114 &1700659244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23956,6 +23976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec19eba5ee7f4949b9bd1f010008388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentState: 0
   _moveSpeed: 4
 --- !u!50 &1700659245
 Rigidbody2D:

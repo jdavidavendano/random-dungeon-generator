@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Diferenciaremos los estados en los que puede estar el jugador
-enum PlayerState {
+public enum PlayerState {
+    idle,
     walk,
-    attack
+    attack,
+    stagger
 }
 
 public class PlayerMovement : MonoBehaviour {
 
-    private PlayerState _currentState;
+    public PlayerState _currentState;
     [SerializeField] private float _moveSpeed = 12f;
     private Rigidbody2D _rigidBody;
     private Vector2 _movement;
@@ -37,7 +39,7 @@ public class PlayerMovement : MonoBehaviour {
         _movement.y = Input.GetAxisRaw("Vertical");
 
         // Input del ataque
-        if (Input.GetMouseButtonDown(0) && _currentState != PlayerState.attack) {
+        if (Input.GetMouseButtonDown(0) && _currentState != PlayerState.attack && _currentState != PlayerState.stagger) {
             _isAttacking = true;
             StartCoroutine(AttackCo());
         }
@@ -46,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
     // Como el framerate puede cambiar, se manejan las físicas aquí
     // Ejecutado en un tiempo no encapsulado por el framerate (50 veces por segundo)
     void FixedUpdate() {
-        if (_currentState == PlayerState.walk && _isAttacking == false) {
+        if ((_currentState == PlayerState.walk || _currentState == PlayerState.idle) && _isAttacking == false) {
             UpdateAnimationAndMove();
         }
     }
@@ -71,6 +73,11 @@ public class PlayerMovement : MonoBehaviour {
         _rigidBody.MovePosition(_rigidBody.position + _movement * _moveSpeed * Time.fixedDeltaTime);
     }
 
+    // Empujar
+    public void Knock(float knockbackTime) {
+        StartCoroutine(KnockCo(knockbackTime));
+    }
+
     private IEnumerator AttackCo() {
         _animator.SetBool("Attacking", true); // Ejecutar la animación
         _currentState = PlayerState.attack;
@@ -82,5 +89,14 @@ public class PlayerMovement : MonoBehaviour {
         yield return new WaitForSeconds(0.3f); // Esperar mientras termina la animación
         _currentState = PlayerState.walk;
         _isAttacking = false;
+    }
+
+    // Ejecutar el empuje
+    IEnumerator KnockCo(float knockbackTime) {
+        if(_rigidBody != null) {
+            yield return new WaitForSeconds(knockbackTime);
+            _currentState = PlayerState.idle;
+            _rigidBody.velocity = Vector2.zero;
+        }
     }
 }
