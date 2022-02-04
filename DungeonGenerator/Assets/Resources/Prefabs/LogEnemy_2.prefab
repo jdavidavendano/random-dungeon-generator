@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 315049154033625563}
   - component: {fileID: 315049154033625565}
-  - component: {fileID: 6682628508887262472}
-  m_Layer: 0
+  - component: {fileID: 2714279519075144723}
+  m_Layer: 8
   m_Name: LogBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,10 +69,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1900471369
-  m_SortingLayer: 2
+  m_SortingLayerID: 1571328493
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8213902188476598959, guid: bb37c1a29be63be48a6f71eb7e914032, type: 3}
+  m_Sprite: {fileID: -5034061168752090764, guid: bb37c1a29be63be48a6f71eb7e914032, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6682628508887262472
+--- !u!95 &2714279519075144723
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -113,9 +113,8 @@ GameObject:
   - component: {fileID: 315049154753433912}
   - component: {fileID: 315049154753433894}
   - component: {fileID: 907029594301177214}
-  - component: {fileID: 3813928495189482843}
   - component: {fileID: 7686570919636769493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LogEnemy_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -184,24 +183,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &3813928495189482843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315049154753433895}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e8a1ced343fb54f992642ee80413d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 2
-  _baseAttack: 1
-  _moveSpeed: 1.5
-  chaseRadius: 4
-  attackRadius: 0.52
-  idleVelocity: 0.3
 --- !u!114 &7686570919636769493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,8 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743b89c352df97c489ba14a2e051062b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5
+  _health: 2
   _baseAttack: 1
   _moveSpeed: 1.5
-  chaseRadius: 3
-  attackRadius: 0.65
+  _currentState: 0
+  _chaseRadius: 2
+  _attackRadius: 0.7

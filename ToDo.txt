@@ -1,12 +1,8 @@
 -----Preguntas-----
 
-Arreglar RigidBody:
--Los enemigos empujan al jugador y lo dejan moviéndose.
--Al golpearlos se buggean.
--A veces al acercarse se buggean.
-
-Preguntar si es mejor que se sobrelapen o que se separen unos de otros
-(¿cómo hacerlo?)
+El player empuja a los enemigos y:
+-les deja ese empuje aplicado cuando este se aleja.
+-Se ponen a temblar cuando se quedan al lado de él.
 
 -----ToDo-----
 Sistema de combate y vida.

@@ -10,11 +10,11 @@ enum PlayerState {
 
 public class PlayerMovement : MonoBehaviour {
 
-    [SerializeField] private float _moveSpeed = 12f;
     private PlayerState _currentState;
+    [SerializeField] private float _moveSpeed = 12f;
     private Rigidbody2D _rigidBody;
-    private Animator _animator;
     private Vector2 _movement;
+    private Animator _animator;
     private bool _isAttacking;
 
     void Start() {
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
         // Movimiento
         if (_movement != Vector2.zero) {
             MoveCharacter();
-
+            // Ejecutar las animaciones
             _animator.SetFloat("Horizontal", _movement.x);
             _animator.SetFloat("Vertical", _movement.y);
             _animator.SetBool("Moving", true);
@@ -67,16 +67,17 @@ public class PlayerMovement : MonoBehaviour {
 
     void MoveCharacter() {
         _movement.Normalize();
+        _rigidBody.velocity = Vector2.zero;
         _rigidBody.MovePosition(_rigidBody.position + _movement * _moveSpeed * Time.fixedDeltaTime);
     }
 
     private IEnumerator AttackCo() {
-        _animator.SetBool("Attacking", true);
+        _animator.SetBool("Attacking", true); // Ejecutar la animación
         _currentState = PlayerState.attack;
 
         yield return null; // Introduce un pequeño delay en la acción
         
-        _animator.SetBool("Attacking", false);
+        _animator.SetBool("Attacking", false); // Dejar de ejecutar a animación
 
         yield return new WaitForSeconds(0.3f); // Esperar mientras termina la animación
         _currentState = PlayerState.walk;

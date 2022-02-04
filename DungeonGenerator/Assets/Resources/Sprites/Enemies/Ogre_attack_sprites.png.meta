@@ -1,76 +1,55 @@
 fileFormatVersion: 2
-guid: bb37c1a29be63be48a6f71eb7e914032
+guid: 99a36810829c8734a99a738f32b94a22
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5034061168752090764
-    second: Log_Walk_Down_1
+      213: 4079024381068309220
+    second: Ogre_Attack_Down_1
   - first:
-      213: -8771329076928401280
-    second: Log_Walk_Down_2
+      213: -2413343258722215764
+    second: Ogre_Attack_Down_2
   - first:
-      213: 2376815873980901129
-    second: Log_Walk_Down_3
+      213: -7689516855428512398
+    second: Ogre_Attack_Down_3
   - first:
-      213: -1512028583440225198
-    second: Log_Walk_Down_4
+      213: -1469879329949605291
+    second: Ogre_Attack_Down_4
   - first:
-      213: 8213902188476598959
-    second: Log_Idle_1
+      213: -4595737047348238561
+    second: Ogre_Attack_Up_1
   - first:
-      213: -22439546833456996
-    second: Log_Wake_Up_1
+      213: 7210269430212126475
+    second: Ogre_Attack_Up_2
   - first:
-      213: -451413936476517383
-    second: Log_Walk_Up_1
+      213: 3417586621162738884
+    second: Ogre_Attack_Up_3
   - first:
-      213: 8458950633466780684
-    second: Log_Walk_Up_2
+      213: 1892170638232913272
+    second: Ogre_Attack_Up_4
   - first:
-      213: 3059174765694063163
-    second: Log_Walk_Up_3
+      213: -8799995575176783795
+    second: Ogre_Attack_Right_1
   - first:
-      213: -34017176892466219
-    second: Log_Walk_Up_4
+      213: 9114078935630010517
+    second: Ogre_Attack_Right_2
   - first:
-      213: -5690133823277906687
-    second: Log_Idle_2
+      213: 2670572250263382453
+    second: Ogre_Attack_Right_3
   - first:
-      213: -2570500000468905864
-    second: Log_Wake_Up_2
+      213: 5700767193190630657
+    second: Ogre_Attack_Right_4
   - first:
-      213: 8498479158080882289
-    second: Log_Walk_Right_1
+      213: -336000531214846984
+    second: Ogre_Attack_Left_1
   - first:
-      213: -6457386710923275188
-    second: Log_Walk_Right_2
+      213: 1777361459721282548
+    second: Ogre_Attack_Left_2
   - first:
-      213: 681774289175886536
-    second: Log_Walk_Right_3
+      213: 1660108805471425300
+    second: Ogre_Attack_Left_3
   - first:
-      213: 2703527186074568732
-    second: Log_Walk_Right_4
-  - first:
-      213: 3107883342233372815
-    second: Log_Idle_3
-  - first:
-      213: -822619953307990688
-    second: Log_Wake_Up_3
-  - first:
-      213: -128083769461270964
-    second: Log_Walk_Left_1
-  - first:
-      213: -3791062316690792145
-    second: Log_Walk_Left_2
-  - first:
-      213: -2086765476746818828
-    second: Log_Walk_Left_3
-  - first:
-      213: 5566842953363755866
-    second: Log_Walk_Left_4
-  - first:
-      213: -7445369939883215787
-    second: Log_Idle_4
+      213: -137277378185822715
+    second: Ogre_Attack_Left_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +94,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -160,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Log_Walk_Down_1
+      name: Ogre_Attack_Down_1
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 471a1f2e90c632ab0800000000000000
-      internalID: -5034061168752090764
+      spriteID: 4e2fbbf101b9b9830800000000000000
+      internalID: 4079024381068309220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Down_2
+      name: Ogre_Attack_Down_2
       rect:
         serializedVersion: 2
         x: 32
@@ -195,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 080b0a15daaf54680800000000000000
-      internalID: -8771329076928401280
+      spriteID: ca857c6b715128ed0800000000000000
+      internalID: -2413343258722215764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Down_3
+      name: Ogre_Attack_Down_3
       rect:
         serializedVersion: 2
         x: 64
@@ -216,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9072429c1752cf020800000000000000
-      internalID: 2376815873980901129
+      spriteID: 2750ec92929594590800000000000000
+      internalID: -7689516855428512398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Down_4
+      name: Ogre_Attack_Down_4
       rect:
         serializedVersion: 2
         x: 96
@@ -237,56 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25ceec1b302340be0800000000000000
-      internalID: -1512028583440225198
+      spriteID: 5522aa38980f99be0800000000000000
+      internalID: -1469879329949605291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Idle_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: faa83f37584adf170800000000000000
-      internalID: 8213902188476598959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Log_Wake_Up_1
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c90321ed95740bff0800000000000000
-      internalID: -22439546833456996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Log_Walk_Up_1
+      name: Ogre_Attack_Up_1
       rect:
         serializedVersion: 2
         x: 0
@@ -300,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fb08ad9a614cb9f0800000000000000
-      internalID: -451413936476517383
+      spriteID: f17a4b33189a830c0800000000000000
+      internalID: -4595737047348238561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Up_2
+      name: Ogre_Attack_Up_2
       rect:
         serializedVersion: 2
         x: 32
@@ -321,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0c5a50a8ca346570800000000000000
-      internalID: 8458950633466780684
+      spriteID: b07e6aa58d5001460800000000000000
+      internalID: 7210269430212126475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Up_3
+      name: Ogre_Attack_Up_3
       rect:
         serializedVersion: 2
         x: 64
@@ -342,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b32980fbd3f547a20800000000000000
-      internalID: 3059174765694063163
+      spriteID: 4c4588fbce4bd6f20800000000000000
+      internalID: 3417586621162738884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Up_4
+      name: Ogre_Attack_Up_4
       rect:
         serializedVersion: 2
         x: 96
@@ -363,56 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5db101fce85278ff0800000000000000
-      internalID: -34017176892466219
+      spriteID: 8750c4a9b27524a10800000000000000
+      internalID: 1892170638232913272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 105c5137f659801b0800000000000000
-      internalID: -5690133823277906687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Log_Wake_Up_2
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 870d8e06edfb35cd0800000000000000
-      internalID: -2570500000468905864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Log_Walk_Right_1
+      name: Ogre_Attack_Right_1
       rect:
         serializedVersion: 2
         x: 0
@@ -426,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 176c87474c9a0f570800000000000000
-      internalID: 8498479158080882289
+      spriteID: d48149416a220e580800000000000000
+      internalID: -8799995575176783795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Right_2
+      name: Ogre_Attack_Right_2
       rect:
         serializedVersion: 2
         x: 32
@@ -447,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c441716cff0c266a0800000000000000
-      internalID: -6457386710923275188
+      spriteID: 598d815e086bb7e70800000000000000
+      internalID: 9114078935630010517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Right_3
+      name: Ogre_Attack_Right_3
       rect:
         serializedVersion: 2
         x: 64
@@ -468,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cab2539a16267900800000000000000
-      internalID: 681774289175886536
+      spriteID: 5b9e6f3ff47cf0520800000000000000
+      internalID: 2670572250263382453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Right_4
+      name: Ogre_Attack_Right_4
       rect:
         serializedVersion: 2
         x: 96
@@ -489,56 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c18069ed6abd48520800000000000000
-      internalID: 2703527186074568732
+      spriteID: 1050459ee813d1f40800000000000000
+      internalID: 5700767193190630657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f888c29fe6b612b20800000000000000
-      internalID: 3107883342233372815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Log_Wake_Up_3
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 065cde9c2877594f0800000000000000
-      internalID: -822619953307990688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Log_Walk_Left_1
+      name: Ogre_Attack_Left_1
       rect:
         serializedVersion: 2
         x: 0
@@ -552,17 +405,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4694c38d74f83ef0800000000000000
-      internalID: -128083769461270964
+      spriteID: 8f3b89c0c49465bf0800000000000000
+      internalID: -336000531214846984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Left_2
+      name: Ogre_Attack_Left_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 0
         width: 32
         height: 32
@@ -573,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f21a64ca8e0736bc0800000000000000
-      internalID: -3791062316690792145
+      spriteID: 4f3282ca4d47aa810800000000000000
+      internalID: 1777361459721282548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Left_3
+      name: Ogre_Attack_Left_3
       rect:
         serializedVersion: 2
         x: 64
@@ -594,19 +447,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fa05f4ead15a03e0800000000000000
-      internalID: -2086765476746818828
+      spriteID: 4135f96b924e90710800000000000000
+      internalID: 1660108805471425300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Log_Walk_Left_4
+      name: Ogre_Attack_Left_4
       rect:
         serializedVersion: 2
-        x: 96
+        x: 98
         y: 0
-        width: 32
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -615,29 +468,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5312a3fb26614d40800000000000000
-      internalID: 5566842953363755866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Log_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 554b3e7ac7bbca890800000000000000
-      internalID: -7445369939883215787
+      spriteID: 50e798da3fa481ef0800000000000000
+      internalID: -137277378185822715
       vertices: []
       indices: 
       edges: []

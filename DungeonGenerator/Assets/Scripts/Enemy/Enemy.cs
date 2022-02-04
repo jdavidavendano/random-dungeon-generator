@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum EnemyState {
+public enum EnemyState {
     idle,
     walk,
     attack,
@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour {
     protected string _enemyName;
     [SerializeField] protected int _baseAttack;
     [SerializeField] protected float _moveSpeed;
-    EnemyState _currentState;
+    public EnemyState _currentState;
 
     void Start() {
         
