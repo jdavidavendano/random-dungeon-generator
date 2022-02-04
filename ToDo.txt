@@ -1,14 +1,12 @@
 -----Preguntas-----
 
-El player empuja a los enemigos y:
--les deja ese empuje aplicado cuando este se aleja.
--Se ponen a temblar cuando se quedan al lado de él.
-
 -----ToDo-----
-Sistema de combate y vida.
 
-Sonido
+-Pulir sonidos.
 
-¿Boss?
+-Nombre para el juego.
 
-¿Objetos rompibles?
+-Boss.
+
+-Efectos:
+--Screenshake

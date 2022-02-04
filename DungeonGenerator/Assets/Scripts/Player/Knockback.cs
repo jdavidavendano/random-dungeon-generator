@@ -28,12 +28,21 @@ public class Knockback : MonoBehaviour {
                 if(other.gameObject.CompareTag("Enemy") && other.isTrigger) {
                     hit.GetComponent<Enemy>()._currentState = EnemyState.stagger;
                     other.GetComponent<Enemy>().Knock(hit, _knockbackTime, _damage);
+
+                    if(other.gameObject.name == "LogEnemy(Clone)") {
+                        SoundController.PlaySound("LogHit");
+                    }
+                    else {
+                        SoundController.PlaySound("BossHit");
+                    }
                 }
                 // Ejecución para enemigo golpeando a jugador
                 if(other.gameObject.CompareTag("Player")) {
                     if(other.GetComponent<PlayerMovement>()._currentState != PlayerState.stagger) {
                         hit.GetComponent<PlayerMovement>()._currentState = PlayerState.stagger;
                         other.GetComponent<PlayerMovement>().Knock(_knockbackTime, _damage);
+
+                        SoundController.PlaySound("PlayerHit");
                     }
                 }
             }

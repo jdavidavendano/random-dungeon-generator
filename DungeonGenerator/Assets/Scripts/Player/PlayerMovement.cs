@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _currentState != PlayerState.attack && _currentState != PlayerState.stagger)
         {
             _isAttacking = true;
+            SoundController.PlaySound("Sword2");
             StartCoroutine(AttackCo());
         }
     }
