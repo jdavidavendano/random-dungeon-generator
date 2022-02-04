@@ -6,6 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject Enemy;
 
+    private GameObject player;
+
     [SerializeField]
     public int enemyNumber = 8;
 
@@ -15,11 +17,25 @@ public class EnemySpawner : MonoBehaviour
 
     private List<Vector3> availableTiles;
 
+    [SerializeField]
+    private int minDistanceSpawnEnemiesFromPlayer = 8;
+
+    private Vector2 getRandomTilePosition()
+    {
+        int randomTileIndex = Random.Range(0, availableTiles.Count);
+
+        return new Vector2(
+            availableTiles[randomTileIndex].x + 0.5f,
+            availableTiles[randomTileIndex].y + 0.5f
+        );
+    }
+
     void Start()
     {
         // Find the floor grid to spawn enemies in the avaliable tiles
 
         floor = GameObject.Find("Grid/Floor");
+        player = GameObject.Find("PlayerNormal");
         tilemap = floor.GetComponent<Tilemap>();
 
         availableTiles = new List<Vector3>();
@@ -40,11 +56,11 @@ public class EnemySpawner : MonoBehaviour
         // Random instantiate enemies
         for (int newEnemy = 0; newEnemy < enemyNumber; newEnemy++)
         {
-            int randomTileIndex = Random.Range(0, availableTiles.Count);
-            Vector2 randomTilePosition = new Vector2(
-                availableTiles[randomTileIndex].x + 0.5f,
-                availableTiles[randomTileIndex].y + 0.5f
-            );
+            Vector2 randomTilePosition = getRandomTilePosition();
+            while (Vector2.Distance(player.transform.position, randomTilePosition) <= minDistanceSpawnEnemiesFromPlayer)
+            {
+                randomTilePosition = getRandomTilePosition();
+            }
             Instantiate(Enemy, randomTilePosition, Quaternion.identity);
         }
     }
