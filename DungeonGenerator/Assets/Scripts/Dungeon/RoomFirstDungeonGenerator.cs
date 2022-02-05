@@ -77,9 +77,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
 
         // Spawnear al jugador
-        _player.transform.position = playerSpawn;
+        _player.transform.position = new Vector2(playerSpawn.x + 0.5f, playerSpawn.y + 0.5f);
         // Spawnear al boss
-        _boss.transform.position = bossSpawn;
+        _boss.transform.position = new Vector2(bossSpawn.x + 0.5f, bossSpawn.y + 0.5f);
     }
 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)

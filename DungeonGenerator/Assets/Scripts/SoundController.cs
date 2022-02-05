@@ -11,7 +11,7 @@ public class SoundController : MonoBehaviour {
         _playerHit = Resources.Load<AudioClip>("Sounds/PlayerHit");
         _playerWalk = Resources.Load<AudioClip>("Sounds/PlayerWalk");
         _playerDeath = Resources.Load<AudioClip>("Sounds/PlayerDeath");
-        _sword = Resources.Load<AudioClip>("Sounds/Sword2");
+        _sword = Resources.Load<AudioClip>("Sounds/Sword");
         _enemyLogHit = Resources.Load<AudioClip>("Sounds/LogHit");
         _bossHit = Resources.Load<AudioClip>("Sounds/BossHit");
         _bossDeath = Resources.Load<AudioClip>("Sounds/BossDeath");
@@ -30,7 +30,7 @@ public class SoundController : MonoBehaviour {
             case "PlayerDeath":
                 _audioSource.PlayOneShot(_playerDeath);
                 break;
-            case "Sword2":
+            case "Sword":
                 _audioSource.PlayOneShot(_sword);
                 break;
             case "LogHit":
