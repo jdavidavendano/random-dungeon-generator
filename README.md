@@ -1,20 +1,34 @@
-# Holi
+# Dungeon Generator
 
 
-- git status -> ver qué cambios hay, el estado del repo local
+## Descripción
+* ### Creación de la mazmorra
+  * Un generador de mazmorras aleatorias, utilizamos un algoritmo tipo `random walk` para generar las habitaciones y después las unimos con pasillos.
+
+* ### Jugabilidad
+  * El jugador tiene ataques cuerpo a cuerpo. 
+  * Hay dos tipos de enemigos:
+    * LogEnemy:
+      * Enemigo con sprite de tronco de madera
+      * Requiere ser golpeado dos veces para morir
+      * Cada ataque le hace un daño al jugador equivalente a medio corazón
+    * OgreBoss:
+      * Enemigo con sprite de ogro
+      * Requiere ser golpeado seis veces para morir
+      * Cada ataque le hace un daño al jugador equivalente a un corazón
+
+## Acerca de 
+
+* Versión de Unity:
+  * 2020.3.20f1
+* Paquetes adicionales:
+  * Ninguno
+
+## Creado por
+
+* Luis
+* David
+* Jonathan
 
 
-- git checkout -b "Nombre-rama-nueva" -> crear una rama en el repo local 
 
-- git checkout "Nombre-rama-existente" -> me paso a otra rama 
-- git pull -> Se trae los cambios del repo remoto
-- git fetch -> Sync all the repo 
-
-
-## Hice cambios 
-
-- git add (nombre del archivos || .) -> agregar mis cambios, punto, agrega todo, por nombre agrega el archivo 
-
-- git commit -m "Descripción del commit" -> Crea el commit con un mensaje
-
-- git push -> sube los cambios al repo remoto
