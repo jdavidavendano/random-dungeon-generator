@@ -18,13 +18,17 @@ public class LogEnemy : Enemy
     private float timeSleeping = 0f;
 
     private float timeAwakeMandatory = 10f;
-
-
-    private void Awake()
-    {
-        lastDirection = getRandomDirection();
-
-    }
+    private List<Vector2> directions = new List<Vector2> {
+        new Vector2(0, 1f),
+        new Vector2(0, -1f),
+        new Vector2(-1f, 0),
+        new Vector2(1f, 0),
+        new Vector2(1f, 1f),
+        new Vector2(-1f, 1f),
+        new Vector2(1f, -1f),
+        new Vector2(-1f, -1f)
+    };
+    System.Random rnd = new System.Random();
 
     private float goToBed()
     {
@@ -40,18 +44,6 @@ public class LogEnemy : Enemy
 
         return 0;
     }
-
-    private List<Vector2> directions = new List<Vector2> {
-        new Vector2(0, 1f),
-        new Vector2(0, -1f),
-        new Vector2(-1f, 0),
-        new Vector2(1f, 0),
-        new Vector2(1f, 1f),
-        new Vector2(-1f, 1f),
-        new Vector2(1f, -1f),
-        new Vector2(-1f, -1f)
-    };
-    System.Random rnd = new System.Random();
 
     private int getRandomDirection()
     {
@@ -69,6 +61,8 @@ public class LogEnemy : Enemy
         _rigidBody = GetComponent<Rigidbody2D>();
         _target = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
+
+        lastDirection = getRandomDirection();
     }
 
     // Se usa para las físicas

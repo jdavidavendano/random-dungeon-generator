@@ -12,20 +12,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private bool randomWalkRooms = false;
     private GameObject _player;
     private GameObject _boss;
-
-    public override void RunProceduralGeneration2()
-    {
-        // Se busca al objeto player para teletransportarlo mas tarde al generar la dungeon
-        _player = GameObject.Find("Player");
-        // Se busca al objeto boss para teletransportarlo mas tarde al generar la dungeon
-        _boss = GameObject.Find("OgreBoss");
-
-        // Se establece la seed
-        Random.InitState(seed);
-
-        // Creacion del dungeon
-        CreateRooms();
-    }
+    
+    // Generación en el juego
     public override void RunProceduralGeneration()
     {
         // Se busca al objeto player para teletransportarlo mas tarde al general el dungeon
@@ -38,6 +26,26 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         dungeonWidth = MenuScript._DungeonSize;
         dungeonHeight = MenuScript._DungeonSize;
         seed = MenuScript._Seed;
+
+        // Si la seed es cero genera una seed aleatoria en el rango
+        if(seed == 0) {
+            seed = Random.Range(0, 1000000);
+        }
+
+        // Se establece la seed
+        Random.InitState(seed);
+
+        // Creación del dungeon
+        CreateRooms();
+    }
+
+    // Generación en el inspector
+    public override void RunProceduralGeneration2()
+    {
+        // Se busca al objeto player para teletransportarlo mas tarde al generar la dungeon
+        _player = GameObject.Find("Player");
+        // Se busca al objeto boss para teletransportarlo mas tarde al generar la dungeon
+        _boss = GameObject.Find("OgreBoss");
 
         // Se establece la seed
         Random.InitState(seed);
