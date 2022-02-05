@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject player;
 
     [SerializeField]
-    public int enemyNumber = 8;
+    [Range(0, 100)] public int enemyNumber = 25;
 
     private GameObject floor;
 
@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     private List<Vector3> availableTiles;
 
     [SerializeField]
-    private int minDistanceSpawnEnemiesFromPlayer = 8;
+    [Range(1, 8)] private int minDistanceSpawnEnemiesFromPlayer = 5;
 
     private Vector2 getRandomTilePosition()
     {
