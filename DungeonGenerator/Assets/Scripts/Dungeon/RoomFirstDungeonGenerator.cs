@@ -11,11 +11,14 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] [Range(0, 10)] private int offset = 1;
     [SerializeField] private bool randomWalkRooms = false;
     private GameObject _player;
+    private GameObject _boss;
 
     public override void RunProceduralGeneration2()
     {
-        // Se busca al objeto player para teletransportarlo mas tarde al general el dungeon
-        _player = GameObject.Find("PlayerNormal");
+        // Se busca al objeto player para teletransportarlo mas tarde al generar la dungeon
+        _player = GameObject.Find("Player");
+        // Se busca al objeto boss para teletransportarlo mas tarde al generar la dungeon
+        _boss = GameObject.Find("OgreBoss");
 
         // Se establece la seed
         Random.InitState(seed);
@@ -26,7 +29,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     public override void RunProceduralGeneration()
     {
         // Se busca al objeto player para teletransportarlo mas tarde al general el dungeon
-        _player = GameObject.Find("PlayerNormal");
+        _player = GameObject.Find("Player");
+        _boss = GameObject.Find("OgreBoss");
 
         // Se cargan los datos de la dungeon y las salas
         minRoomWidth = MenuScript._RoomSize;
@@ -63,7 +67,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
         }
 
-        Vector2 position = roomCenters[0];
+        Vector2 playerSpawn = roomCenters[0];
+        Vector2 bossSpawn = roomCenters[roomCenters.Count - 1];
 
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
         floor.UnionWith(corridors);
@@ -72,7 +77,9 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
 
         // Spawnear al jugador
-        _player.transform.position = position;
+        _player.transform.position = playerSpawn;
+        // Spawnear al boss
+        _boss.transform.position = bossSpawn;
     }
 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)

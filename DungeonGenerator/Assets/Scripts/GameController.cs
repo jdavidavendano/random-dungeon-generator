@@ -1,25 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
-{
+public class GameController : MonoBehaviour {
     AbstractDungeonGenerator generator;
     
-    void Awake()
-    {
+    void Awake() {
         generator = FindObjectOfType<RoomFirstDungeonGenerator>();
         generator.tilemapVisualizer.Clear();
         generator.RunProceduralGeneration();
     }
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Restart() {
+        SceneManager.LoadScene("Menu");
     }
 }

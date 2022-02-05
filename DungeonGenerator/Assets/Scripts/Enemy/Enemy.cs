@@ -19,13 +19,18 @@ public class Enemy : MonoBehaviour {
     [SerializeField] protected float _moveSpeed;
 
     void Awake() {
-        _health = _maxHealth._initialValue;
+        _health = _maxHealth._initialValue; // setear la vida inicial
     }
 
     void TakeDamage(float damage) {
-        _health -= damage;
+        _health -= damage; // quitarle vida al enemigo
+
+        // Verificar si el enemigo murió
         if(_health <= 0) {
-            this.gameObject.SetActive(false);
+            if(this.gameObject.name == "OgreBoss") { // Reproducir el sonido de muerte del boss
+                SoundController.PlaySound("BossDeath");
+            }
+            this.gameObject.SetActive(false); // desactivar al enemigo
         }
     }
 

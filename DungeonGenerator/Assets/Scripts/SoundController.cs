@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour {
     
-    static AudioClip _playerHit, _sword, _enemyLogHit, _bossHit;
+    public static AudioClip _playerWalk, _playerHit, _playerDeath, _sword, _enemyLogHit, _bossHit, _bossDeath;
     static AudioSource _audioSource;
 
     void Start() {
         _playerHit = Resources.Load<AudioClip>("Sounds/PlayerHit");
+        _playerWalk = Resources.Load<AudioClip>("Sounds/PlayerWalk");
+        _playerDeath = Resources.Load<AudioClip>("Sounds/PlayerDeath");
         _sword = Resources.Load<AudioClip>("Sounds/Sword2");
         _enemyLogHit = Resources.Load<AudioClip>("Sounds/LogHit");
         _bossHit = Resources.Load<AudioClip>("Sounds/BossHit");
+        _bossDeath = Resources.Load<AudioClip>("Sounds/BossDeath");
 
         _audioSource = GetComponent<AudioSource>();
     }
@@ -21,6 +24,12 @@ public class SoundController : MonoBehaviour {
             case "PlayerHit":
                 _audioSource.PlayOneShot(_playerHit);
                 break;
+            case "PlayerWalk":
+                _audioSource.PlayOneShot(_playerWalk);
+                break;
+            case "PlayerDeath":
+                _audioSource.PlayOneShot(_playerDeath);
+                break;
             case "Sword2":
                 _audioSource.PlayOneShot(_sword);
                 break;
@@ -29,6 +38,9 @@ public class SoundController : MonoBehaviour {
                 break;
             case "BossHit":
                 _audioSource.PlayOneShot(_bossHit);
+                break;
+            case "BossDeath":
+                _audioSource.PlayOneShot(_bossDeath);
                 break;
         }
     }

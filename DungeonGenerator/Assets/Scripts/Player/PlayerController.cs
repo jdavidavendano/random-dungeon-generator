@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // Diferenciaremos los estados en los que puede estar el jugador
 public enum PlayerState
@@ -11,7 +13,7 @@ public enum PlayerState
     stagger
 }
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
     public PlayerState _currentState;
@@ -22,12 +24,16 @@ public class PlayerMovement : MonoBehaviour
     private bool _isAttacking;
     public FloatValue _currentHealth;
     public Signal _playerHealthSignal;
+    AudioSource _audioSource;
+    int _moving;
+    [SerializeField] GameObject _panel;
 
     void Start()
     {
         _currentState = PlayerState.walk;
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
+        _audioSource = GetComponent<AudioSource>();
 
         // Para que al empezar el juego se inicialicen valores de acuerdo a la dirección del jugador
         // y no se activen los cuatro colliders al atacar sin haberse movido.
@@ -35,14 +41,28 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("Vertical", -1);
 
         _isAttacking = false;
+        _moving = 0;
     }
 
     void Update()
     {
         // Input del movimiento
-        _movement = Vector3.zero;
+        _movement = Vector2.zero;
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
+
+        if(_movement != Vector2.zero) {
+            if(_moving == -1) {
+                _audioSource.Play(0);
+                _moving++;
+            }
+        }
+        else {
+            if(_moving == 0) {
+                _audioSource.Stop();
+                _moving--;
+            }
+        }
 
         // Input del ataque
         if (Input.GetMouseButtonDown(0) && _currentState != PlayerState.attack && _currentState != PlayerState.stagger)
@@ -73,6 +93,8 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetFloat("Horizontal", _movement.x);
             _animator.SetFloat("Vertical", _movement.y);
             _animator.SetBool("Moving", true);
+
+            // SoundController.PlaySound("PlayerWalk"); // reproducir sonido de pasos
         }
         else
         {
@@ -92,6 +114,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _currentHealth._runTimeValue -= damage; // Hacer daño
         _playerHealthSignal.Raise();
+        // Debug.Log("acá?");
+
         // Solo se ejecuta si el jugador no ha muerto
         if (_currentHealth._runTimeValue > 0)
         {
@@ -99,9 +123,26 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            this.gameObject.SetActive(false);
+            SoundController.PlaySound("PlayerDeath");
+            gameObject.SetActive(false);
+            _panel.SetActive(true);
+            // StartCoroutine(KnockCo(knockbackTime));
+            // Component[] colliders = gameObject.GetComponents(typeof(BoxCollider2D));
+            // foreach(BoxCollider2D collider in colliders) {
+            //     collider.enabled = false;
+            // }
+            // gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            // _rigidBody.velocity = Vector2.zero;
+            // StartCoroutine(DieCo());
         }
     }
+
+    // IEnumerator DieCo() {
+    //     SoundController.PlaySound("PlayerDeath");
+    //     // gameObject.SetActive(false);
+    //     yield return new WaitForSeconds(2f);
+    //     SceneManager.LoadScene("Menu");
+    // }
 
     private IEnumerator AttackCo()
     {

@@ -29,6 +29,7 @@ public class Knockback : MonoBehaviour {
                     hit.GetComponent<Enemy>()._currentState = EnemyState.stagger;
                     other.GetComponent<Enemy>().Knock(hit, _knockbackTime, _damage);
 
+                    // Reproducir sonido para los tipos de enemigos
                     if(other.gameObject.name == "LogEnemy(Clone)") {
                         SoundController.PlaySound("LogHit");
                     }
@@ -38,11 +39,12 @@ public class Knockback : MonoBehaviour {
                 }
                 // Ejecución para enemigo golpeando a jugador
                 if(other.gameObject.CompareTag("Player")) {
-                    if(other.GetComponent<PlayerMovement>()._currentState != PlayerState.stagger) {
-                        hit.GetComponent<PlayerMovement>()._currentState = PlayerState.stagger;
-                        other.GetComponent<PlayerMovement>().Knock(_knockbackTime, _damage);
+                    if(other.GetComponent<PlayerController>()._currentState != PlayerState.stagger) {
+                        hit.GetComponent<PlayerController>()._currentState = PlayerState.stagger;
+                        other.GetComponent<PlayerController>().Knock(_knockbackTime, _damage);
+                        // Debug.Log("acá?");
 
-                        SoundController.PlaySound("PlayerHit");
+                        SoundController.PlaySound("PlayerHit"); // reproducir sonido de jugador siendo golpeado
                     }
                 }
             }

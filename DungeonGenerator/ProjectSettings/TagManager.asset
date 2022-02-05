@@ -15,7 +15,7 @@ TagManager:
   - Blocking
   - Player
   - Enemy
-  - 
+  - Boss
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1900471369
+    locked: 0
+  - name: Boss
+    uniqueID: 3268279453
     locked: 0
