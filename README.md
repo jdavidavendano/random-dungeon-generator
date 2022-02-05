@@ -1,9 +1,10 @@
 # Dungeon Generator
-
+* Gameplay
+  * ![gif](https://github.com/jdavidavendano/random-dungeon-generator/raw/main/assetsReadme/2022-02-04%2022-33-31.gif)
 
 ## Descripción
 * ### Creación de la mazmorra
-  * Un generador de mazmorras aleatorias, utilizamos un algoritmo tipo `random walk` utilizando una seed para generar las habitaciones y después las unimos con pasillos.
+  * Un generador de mazmorras aleatorias, utilizamos un algoritmo tipo `random walk` utilizando una seed para generar las habitaciones y después las unimos con pasillos
 
 * ### Jugabilidad
   * El mapa tiene suelo, paredes y fondo
@@ -22,7 +23,7 @@
       * Requiere ser golpeado seis veces para morir
       * Cada ataque le hace un daño al jugador equivalente a un corazón
   * Menú de opciones:
-    * Se puede introducir una seed para generar la mazmorra (si se usa la seed por defecto (0), se obtendrá una mazmorra con uan seed aleatoria
+    * Se puede introducir una seed para generar la mazmorra (si se usa la seed por defecto (0), se obtendrá una mazmorra con una seed aleatoria
     * Se puede personalizar la anchura y altura de las habitaciones para la generación de la mazmorra
     * Se puede personalizar la anchura y altura de la mazmorra para su generación 
 
