@@ -19,6 +19,13 @@ public class LogEnemy : Enemy
 
     private float timeAwakeMandatory = 10f;
 
+
+    private void Awake()
+    {
+        lastDirection = getRandomDirection();
+
+    }
+
     private float goToBed()
     {
         if (timeAwakeMandatory < 0)
@@ -44,13 +51,14 @@ public class LogEnemy : Enemy
         new Vector2(1f, -1f),
         new Vector2(-1f, -1f)
     };
+    System.Random rnd = new System.Random();
 
     private int getRandomDirection()
     {
-        int newDirection = Random.Range(0, directions.Count);
+        int newDirection = rnd.Next(0, directions.Count); //Random.Range(0, directions.Count);
         while (newDirection == lastDirection)
         {
-            newDirection = Random.Range(0, directions.Count);
+            newDirection = rnd.Next(0, directions.Count);
         }
         return newDirection;
     }

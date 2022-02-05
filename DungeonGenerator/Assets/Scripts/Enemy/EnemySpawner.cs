@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         // Find the floor grid to spawn enemies in the avaliable tiles
 
         floor = GameObject.Find("Grid/Floor");
-        player = GameObject.Find("PlayerNormal");
+        player = GameObject.Find("Player");
         tilemap = floor.GetComponent<Tilemap>();
 
         availableTiles = new List<Vector3>();
